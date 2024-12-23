@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #2c3e50, #4ca1af);
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+/* Button 1: Glow Effect */
+.btn-glow {
+    background: #ff5f6d;
+    color: white;
+    box-shadow: 0 0 10px #ff5f6d;
+}
+
+.btn-glow:hover {
+    box-shadow: 0 0 20px #ff5f6d;
+    transform: scale(1.1);
+}
+
+/* Button 2: Sliding Border */
+.btn-slide {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 0;
+    transition: all 0.3s ease;
+}
+
+.btn-slide:hover::before {
+    left: 0;
+}
+
+.btn-slide:hover {
+    color: #2c3e50;
+}
+
+/* Button 3: Ripple Effect */
+.btn-ripple {
+    background: #4ca1af;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ripple span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    background: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+.btn-ripple:active span {
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+.btn-ripple:active {
+    outline: none;
+}
